@@ -1,0 +1,16 @@
+{
+  "name": "@eyolas/node-prune",
+  "version": "0.1.0",
+  "exports": "./mod.ts",
+  "tasks": {
+    "i": "deno compile --output node-prune -A main.ts && sudo mv node-prune /usr/local/bin/node-prune"
+  },
+  "license": "MIT",
+  "imports": {
+    "@cliffy/command": "jsr:@cliffy/command@^1.0.0-rc.7",
+    "@std/fmt": "jsr:@std/fmt@^1.0.3",
+    "@std/path": "jsr:@std/path@^1.0.8",
+    "multimatch": "npm:multimatch@^7.0.0",
+    "os-locale": "npm:os-locale@^6.0.2"
+  }
+}

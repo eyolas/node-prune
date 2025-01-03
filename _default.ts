@@ -71,7 +71,7 @@ export const defaultFiles = [
   "tsconfig.json",
   "tslint.json",
   ".dependency-cruiser.js",
-  ".nycrc"
+  ".nycrc",
 ];
 
 /**
@@ -88,8 +88,6 @@ export const defaultDirectories = [
   ".idea",
   ".vscode",
   "website",
-  "images",
-  "assets",
   "example",
   "examples",
   "coverage",
@@ -98,6 +96,11 @@ export const defaultDirectories = [
   ".github",
   ".husky",
 ];
+
+/**
+ * DefaultImagesDirectories is a list of directories that are pruned if images option is set.
+ */
+export const defaultImagesDirectories = ["images", "assets"];
 
 /**
  * DefaultExtensions is a list of extensions that are pruned by default.

@@ -14,9 +14,16 @@ await new Command()
     "-i, --include <include:string[]>",
     "Globs of files that should always be pruned in addition to the defaults. Comma separated list of include.",
   )
-  .option('-f, --files <files:string[]>', 'Files that should always be pruned. Comma separated list of files.')
+  .option(
+    "-f, --files <files:string[]>",
+    "Files that should always be pruned. Comma separated list of files.",
+  )
+  .option(
+    "-img, --images",
+    "Prune images (add images and assets to the list of directories to prune).",
+  )
   .arguments("[dir:string]")
-  .action(async ({ exclude, include, files }, dir) => {
+  .action(async ({ exclude, include, files, images }, dir) => {
     const start = performance.now();
     const pruner = new Pruner();
     if (dir) {
@@ -33,6 +40,10 @@ await new Command()
 
     if (files) {
       pruner.withFiles(files);
+    }
+
+    if (images) {
+      pruner.withImages();
     }
 
     const locale = await osLocale();

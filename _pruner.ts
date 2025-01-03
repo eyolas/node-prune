@@ -4,6 +4,7 @@ import {
   defaultDirectories,
   defaultExtensions,
   defaultFiles,
+  defaultImagesDirectories,
 } from "./_default.ts";
 
 export type Stats = {
@@ -49,6 +50,11 @@ export class Pruner {
 
   withFiles(files: string[]) {
     this.#files.push(...files);
+    return this;
+  }
+
+  withImages() {
+    this.#dirs.push(...defaultImagesDirectories);
     return this;
   }
 
